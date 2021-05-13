@@ -1,21 +1,17 @@
-import React, {Component} from 'react'
-import {ListaDeNotas} from "./componnents/ListaDeNotas/ListaDeNotas";
-import {FormularioCadastro} from "./componnents/FormularioCadastro/FormularioCadastro";
-import './assets/app.css';
+import './App.css';
+import FormularioCadastro from "./Componnetns/FormularioCadastro/FormularioCadastro";
+import {Container} from "@material-ui/core";
+import {Typography} from "@material-ui/core";
+import 'fontsource-roboto';
 
-class App extends Component {
-  criarNota(titulo, texto) {
-    console.log(`Uma nova nota foi criada ${titulo} ${texto}`)
-  }
+function App() {
+  return (
+    <Container component="article" maxWidth="sm">
+      <Typography variant="h3" align="center">Formulário de Cadastro</Typography>
+      <FormularioCadastro/>
+    </Container>
 
-  render() {
-    return (
-      <section className="conteudo">
-        <FormularioCadastro criarNota={this.criarNota}/>
-        <ListaDeNotas/>
-      </section>
-    );
-  }
+  );
 }
 
 export default App;

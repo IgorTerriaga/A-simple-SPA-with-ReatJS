@@ -7,6 +7,7 @@ function FormularioCadastro({onSubmit}) {
   const [cpf, setCpf] = useState("");
   const [promocoes, setPromocoes] = useState(true);
   const [novidades, setNovidades] = useState(true);
+  const [erro, setErro] = useState({cpf: {valido: true, texto: ""}})
 
   return (
     <form onSubmit={(event) => {
@@ -42,6 +43,11 @@ function FormularioCadastro({onSubmit}) {
         onChange={(event) => {
           setCpf(event.target.value);
         }}
+        onBlur={(event) => {
+          setErro({cpf: {valido: false, texto: "CPF deve ter 11 digitos"}})
+        }}
+        error={!erro.cpf.valido}
+        helperText={erro.cpf.texto}
         id="CPF"
         label="CPF"
         variant="outlined"

@@ -8,6 +8,7 @@ function App() {
   return (
     <Container component="article" maxWidth="sm">
       <Typography variant="h3" align="center">Formulário de Cadastro</Typography>
+<<<<<<< HEAD
       <FormularioCadastro onSubmit={onSubmitForm}/>
     </Container>
 
@@ -16,6 +17,12 @@ function App() {
 
 function onSubmitForm(dados) {
 
+=======
+      <FormularioCadastro/>
+    </Container>
+
+  );
+>>>>>>> main
 }
 
 export default App;
